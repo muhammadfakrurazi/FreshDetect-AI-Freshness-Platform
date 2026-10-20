@@ -1,0 +1,1030 @@
+<!DOCTYPE html><html lang="id" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>FreshDetect V3.0 - Deteksi Kesegaran</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c4c6cf", "on-error-container": "#93000a", "tertiary-fixed-dim": "#93ccff", "primary-container": "#0a2342", "primary-fixed": "#d5e3ff", "inverse-surface": "#2d3133", "tertiary-fixed": "#cce5ff", "surface-dim": "#d8dadc", "primary": "#000d22", "on-surface": "#191c1e", "on-tertiary-container": "#2691d4", "surface": "#f7f9fb", "surface-container-lowest": "#ffffff", "secondary-container": "#6cf8bb", "on-secondary-container": "#00714d", "surface-container-high": "#e6e8ea", "surface-container-low": "#f2f4f6", "on-secondary": "#ffffff", "surface-bright": "#f7f9fb", "inverse-primary": "#b2c7ef", "on-secondary-fixed-variant": "#005236", "surface-container": "#eceef0", "inverse-on-surface": "#eff1f3", "error": "#ba1a1a", "secondary-fixed": "#6ffbbe", "on-background": "#191c1e", "on-surface-variant": "#44474e", "surface-variant": "#e0e3e5", "on-primary-fixed": "#021c3a", "on-secondary-fixed": "#002113", "error-container": "#ffdad6", "background": "#f7f9fb", "primary-fixed-dim": "#b2c7ef", "surface-tint": "#4a5f81", "tertiary": "#000e1b", "secondary": "#006c49", "on-primary": "#ffffff", "on-tertiary-fixed": "#001d31", "surface-container-highest": "#e0e3e5", "on-tertiary-fixed-variant": "#004b73", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#4edea3", "on-error": "#ffffff", "on-primary-container": "#768baf", "tertiary-container": "#00253c", "outline": "#74777e", "on-primary-fixed-variant": "#324768" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.25rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin": "1.5rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-desktop": "2.5rem" }, "fontFamily": { "label-md": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "data-metric": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "body-sm": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-lg": ["Inter"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "data-metric": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin md:px-margin-desktop flex items-center justify-between"><div class="flex items-center"><a class="rounded-xl p-space-xs flex items-center justify-center transition-transform hover:scale-105" href="index.html"><img alt="Apple Sketch Icon Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGGlAAovsRezF5YNREKuhF6WHLYSjK1a1Rvi3K6R9iliyA8JDdDUUDdm-Ott_f26dHOjPd0xc-IRdzDbPC_bmEbYg_U5dhUOniqA59R1oRYHsOhe8NqB1tAEoe6rMacHS91wK7U_evDbFzsgdRmlqAwnwyaKqis1LUhyb0gPAdILv44Or3HSZcaouYPwxovEmrBpPa7ZSpSnCD5elpO2HBbt4qRWf3H_j8FgPR_6JuHZOXvIDUMd9H"></a></div><nav class="hidden md:flex items-center gap-space-xl"><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="beranda" href="index.html">Beranda</a><a aria-current="page" class="transition-colors font-headline-sm text-label-lg font-bold text-primary-container border-b-2 border-primary-container pb-1" data-path="deteksi" href="deteksi.html">Deteksi</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="hasil-deteksi" href="hasil.html">Hasil Deteksi</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="riwayat-scan" href="riwayat.html">Riwayat Scan</a></nav><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="font-label-md text-label-md text-on-surface select-none hidden sm:inline">Muhammad Fakrurazi</span></div></div></header><main class="w-full pt-16 bg-surface flex-1"><div class="flex flex-col w-full">
+<div class="w-full px-margin md:px-margin-desktop py-space-xl max-w-7xl mx-auto flex flex-col gap-space-xl">
+<!-- Top Analytical Header Block -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b-0 pb-2">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary-container">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Modul Diagnostik Citra v3.2</span>
+<span class="font-label-sm text-label-sm text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-container/40 px-2 py-0.5 rounded-full">Spectra-Ready</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-container">
+          Unggah Foto Buah atau Bahan Makanan
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Pastikan objek berada di tengah bingkai dengan pencahayaan optimal untuk akurasi pendeteksian AI maksimum.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg self-start md:self-auto shadow-sm border border-primary-container/5">
+<span class="material-symbols-outlined text-primary-container text-[20px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Algoritma Kalibrasi 2026</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Akurasi Validasi 99.4%</span>
+</div>
+</div>
+</div>
+<!-- Main Bento Workspace: Dropzone & Live Telemetry -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Upload Workspace (8 Columns) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Drag & Drop Zone Card -->
+<div class="relative group bg-surface-container-lowest rounded-xl p-space-xl transition-all duration-300 shadow-sm hover:shadow-md border border-primary-container/10" id="dropZoneContainer">
+<!-- Subtle Backdrop Glow on Drag/Hover -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 via-secondary-container/10 to-transparent rounded-xl pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<!-- Hidden File Input supporting multiple files -->
+<input accept="image/*" class="hidden" id="fileInput" multiple="" type="file">
+<div class="relative flex flex-col items-center justify-center p-space-xl text-center rounded-lg transition-all duration-200 cursor-pointer bg-surface/50 group-hover:bg-surface-container-low/80" id="dropZoneInteractive">
+<!-- Sensor Target Ring / Icon -->
+<div class="relative w-20 h-20 rounded-full bg-primary-container/5 flex items-center justify-center mb-space-md group-hover:scale-105 transition-transform">
+<div class="absolute inset-0 rounded-full border border-primary-container/10 animate-ping opacity-25"></div>
+<span class="material-symbols-outlined text-primary-container text-[38px]">cloud_upload</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary-container mb-space-xs">
+              Seret &amp; lepas foto bahan pangan di sini, atau <span class="text-on-tertiary-container underline underline-offset-4 decoration-2" id="browseLink">telusuri berkas</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mb-space-lg">
+              Format citra termal &amp; RGB didukung: JPG, PNG, WEBP (Maksimal ukuran file 10MB per sampel).
+            </p>
+<!-- Quick Action Preset Buttons Inside Dropzone -->
+<div class="flex flex-col items-center gap-space-sm z-10 w-full max-w-xl" onclick="event.stopPropagation()"><div class="flex flex-wrap items-center justify-center gap-space-sm"><button class="flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary px-space-md py-space-sm rounded-lg font-label-md text-label-md transition shadow-sm active:scale-95" id="btnAddNewSample" type="button"><span class="material-symbols-outlined text-[18px]">add</span>+ Tambah Sampel Baru</button><button class="flex items-center gap-space-xs bg-surface-container-lowest hover:bg-surface-container-high px-space-md py-space-sm rounded-lg text-primary-container font-label-md text-label-md transition shadow-sm active:scale-95 border border-primary-container/15" id="btnLiveCamera" type="button"><span class="material-symbols-outlined text-[18px]">photo_camera</span>Gunakan Kamera Langsung</button><button class="flex items-center gap-space-xs bg-tertiary-fixed/60 hover:bg-tertiary-fixed text-on-tertiary-fixed px-space-md py-space-sm rounded-lg font-label-md text-label-md transition shadow-sm active:scale-95" id="btnSamplePreset" type="button"><span class="material-symbols-outlined text-[18px]">science</span>Gunakan Sampel Uji: foto_apel_segar.jpg (2.4 MB)</button></div><div class="w-full pt-space-xs mt-space-xs border-t border-primary-container/10 flex flex-col items-center gap-1.5"><div class="flex items-center gap-1 text-on-surface-variant text-label-sm font-label-sm"><span class="material-symbols-outlined text-[16px] text-primary-container">tune</span><span class="">Pilih Variasi Sampel Uji Cepat:</span></div><div class="flex flex-wrap items-center justify-center gap-1.5" id="presetChipsContainer"><button class="preset-btn bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary-container border border-primary-container/10 px-2.5 py-1 rounded-full font-label-sm text-label-sm transition shadow-sm active:scale-95" data-preset="apel" type="button">+ Sampel Apel Fuji</button><button class="preset-btn bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary-container border border-primary-container/10 px-2.5 py-1 rounded-full font-label-sm text-label-sm transition shadow-sm active:scale-95" data-preset="jeruk" type="button">+ Sampel Jeruk Pontianak</button><button class="preset-btn bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary-container border border-primary-container/10 px-2.5 py-1 rounded-full font-label-sm text-label-sm transition shadow-sm active:scale-95" data-preset="mangga" type="button">+ Sampel Mangga Harum Manis</button><button class="preset-btn bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary-container border border-primary-container/10 px-2.5 py-1 rounded-full font-label-sm text-label-sm transition shadow-sm active:scale-95" data-preset="ayam" type="button">+ Sampel Daging Ayam</button><button class="preset-btn bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary text-primary-container border border-primary-container/10 px-2.5 py-1 rounded-full font-label-sm text-label-sm transition shadow-sm active:scale-95" data-preset="melon" type="button">+ Sampel Melon</button></div></div></div>
+</div>
+</div>
+<!-- Dynamic Daftar Sampel Batch Preview Grid -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md border border-primary-container/10" id="batchSection">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-high">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">photo_library</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary-container">Daftar Sampel Batch</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kelola antrean citra sebelum inferensi model biometrik AI dijalankan.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-primary-container/10 text-primary-container font-mono font-label-sm text-label-sm px-2.5 py-1 rounded-full" id="batchCounterBadge">1 Sampel Terdaftar</span>
+<button class="text-xs text-error hover:underline font-label-sm" id="btnClearBatch" type="button">Hapus Semua</button>
+</div>
+</div>
+<!-- Grid Cards Container -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-space-sm" id="batchGrid">
+        <div class="relative bg-surface rounded-xl p-3 border transition-all duration-200 flex flex-col justify-between border-secondary shadow-md bg-secondary-container/5 ring-1 ring-secondary">
+          <div class="flex items-start gap-3">
+            <div class="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-surface-container-high border border-primary-container/10">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz7L_YNAj_Uczaj3K5GJqO1Hcuuqmr0DRFOkeMvpoyHotDqPo_Xp-aKsst3ZxLYvVimfFaQ4lcEI2eU1CbhCSMpXBD3O9LTghBmHe4_IgH91EPvnsudxgETFxeOxzIDAox7GbN0fWO6Y-Sd_Ka42nfD4eXMXcJDkPab9KFndweEU8h06i51GaRtvNmWiVh7grOvMSgN5aAJ5u6kL09UFjnkX1xtgzRiQZTZgUUiIbcsmDJ8Uy4OpVJ" alt="Apel Fuji Red Delicious" class="w-full h-full object-cover">
+              <span class="absolute top-1 left-1 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-white"></span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-1">
+                <span class="font-label-sm text-[10px] uppercase font-bold text-outline-variant truncate">#SMP-2025-01</span>
+                <span class="text-[10px] px-1.5 py-0.5 rounded font-medium bg-secondary-container text-on-secondary-container font-semibold">
+                  Aktif
+                </span>
+              </div>
+              <h4 class="font-headline-sm text-label-md font-semibold text-primary-container truncate mt-0.5" title="Apel Fuji Red Delicious">Apel Fuji Red Delicious</h4>
+              <p class="font-body-sm text-[11px] text-on-surface-variant truncate">foto_apel_segar.jpg • 2.4 MB</p>
+            </div>
+          </div>
+          
+          <div class="mt-3 pt-2 border-t border-surface-container-high flex items-center justify-between gap-2">
+            <button type="button" onclick="window.freshSelectSample('SMP-mvg3v64o-583')" class="text-xs font-label-sm px-2.5 py-1 rounded transition-colors flex items-center gap-1 bg-secondary text-on-secondary font-semibold">
+              <span class="material-symbols-outlined text-[14px]">check</span>
+              Sampel Terpilih
+            </button>
+            <button type="button" onclick="window.freshDeleteSample('SMP-mvg3v64o-583', event)" class="p-1 rounded text-outline hover:text-error hover:bg-error-container/40 transition-colors" title="Hapus Sampel">
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+          </div>
+        </div>
+      </div>
+</div>
+<!-- Registration Metadata Form -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md border border-primary-container/10"><div class="flex flex-col md:flex-row md:items-center justify-between gap-space-xs pb-space-xs border-b border-surface-container-high"><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">app_registration</span></div><div><h3 class="font-headline-sm text-headline-sm text-primary-container">Registrasi Sampel Mandiri / Batch Baru</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Masukkan metadata sampel spesifik sebelum memulai kalkulasi degradasi &amp; kualitas bio-kesegaran.</p></div></div><span class="self-start md:self-auto bg-surface-container-high text-on-surface-variant font-mono font-label-sm text-label-sm px-2.5 py-0.5 rounded" id="batchStatusPill">Batch Active</span></div><form class="grid grid-cols-1 md:grid-cols-3 gap-space-md items-end" id="sampleForm" onsubmit="event.preventDefault()"><div class="flex flex-col gap-1"><label class="font-label-sm text-label-sm text-on-surface flex items-center justify-between" for="sampleName"><span class="">Nama Sampel Pangan</span><span class="text-error">*</span></label><input class="bg-surface-container-low border border-primary-container/10 rounded-lg px-space-md py-2 text-body-md font-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container" id="sampleName" placeholder="Contoh: Apel Fuji Grade A" type="text" value="Apel Fuji Red Delicious"></div><div class="flex flex-col gap-1"><label class="font-label-sm text-label-sm text-on-surface flex items-center justify-between" for="sampleCategory"><span class="">Kategori Pangan</span><span class="text-error">*</span></label><select class="bg-surface-container-low border border-primary-container/10 rounded-lg px-space-md py-2 text-body-md font-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container" id="sampleCategory"><option value="Buah (Fresh Fruit)">Buah (Fresh Fruit)</option><option value="Sayur (Vegetables)">Sayur (Vegetables)</option><option value="Daging (Fresh Poultry/Meat)">Daging (Fresh Poultry/Meat)</option><option value="Ikan &amp; Seafood">Ikan &amp; Seafood</option></select></div><div class="flex flex-col gap-1"><label class="font-label-sm text-label-sm text-on-surface flex items-center justify-between" for="sampleBatchId"><span class="">ID Batch / Nomor Lot</span><span class="text-outline font-mono text-[11px]">Auto-Generated</span></label><input class="bg-surface-container-low border border-primary-container/10 rounded-lg px-space-md py-2 font-mono text-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container" id="sampleBatchId" placeholder="#SMP-2026-01" type="text" value="#SMP-2026-01"></div><div class="md:col-span-3 flex flex-wrap items-center justify-between gap-space-sm pt-space-xs"><div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-secondary">verified</span><span class="">Data batch tersinkronisasi otomatis dengan Riwayat Scan dan Kalibrasi Sensor.</span></div><button class="flex items-center gap-space-xs bg-primary-container hover:bg-primary text-on-primary px-space-md py-2.5 rounded-lg font-label-md text-label-md transition shadow-sm active:scale-95 ml-auto" id="btnSaveSample" type="submit"><span class="material-symbols-outlined text-[18px]">playlist_add_check</span>Simpan &amp; Masukkan ke Antrean Deteksi</button></div></form></div>
+<!-- 3 Bento Best Practice Photography Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: Pencahayaan -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow border border-primary-container/5">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">light_mode</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Standar #1</span>
+<h4 class="font-headline-sm text-headline-sm text-primary-container mt-1 mb-space-xs">
+                Pencahayaan Terang
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Gunakan cahaya alami atau lampu ruangan merata tanpa pantulan silau berlebih pada lapisan kutikula buah.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">Cahaya 4000K-5500K</span>
+</div>
+</div>
+<!-- Card 2: Fokus Bebas Bayangan -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow border border-primary-container/5">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">filter_center_focus</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Standar #2</span>
+<h4 class="font-headline-sm text-headline-sm text-primary-container mt-1 mb-space-xs">
+                Fokus Bebas Bayangan
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Posisikan kamera tegak lurus dengan jarak 15-30 cm agar tekstur permukaan dan degradasi seluler terbaca jelas.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">Orientasi 90° Nadir</span>
+</div>
+</div>
+<!-- Card 3: Resolusi Tajam -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow border border-primary-container/5">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Standar #3</span>
+<h4 class="font-headline-sm text-headline-sm text-primary-container mt-1 mb-space-xs">
+                Resolusi Tajam
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Hindari foto buram atau goyang agar AI dapat membedakan bercak pigmen alami dengan kontaminasi mikroba patogen.
+              </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">Min. 1080p Macro</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Preview & Execution Telemetry Column (4 Columns) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Live Diagnostic Card Container -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col border border-primary-container/10">
+<div class="flex flex-col gap-space-xs pb-space-sm mb-space-sm border-b border-surface-container-high"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary-container text-[20px]">monitor_heart</span><span class="font-headline-sm text-headline-sm text-primary-container">Pratinjau Sampel</span></div><span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2.5 py-0.5 rounded-full" id="previewStatusBadge">Siap Deteksi</span></div><div class="flex items-center justify-between bg-primary-container/5 border border-primary-container/10 rounded-lg px-2.5 py-1.5"><div class="flex items-center gap-1.5 min-w-0"><span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span><span class="font-label-sm text-label-sm text-primary-container truncate" id="selectedSampleBadge">Sampel Terpilih: <strong class="font-bold" id="badgeSampleName">Apel Fuji Red Delicious (#SMP-2026-01)</strong></span></div><button class="flex items-center gap-0.5 text-on-tertiary-container hover:text-primary-container font-label-sm text-label-sm shrink-0 underline underline-offset-2 transition-colors ml-1" id="btnSwitchSample" type="button"><span class="material-symbols-outlined text-[14px]">swap_horiz</span>Ganti</button></div></div>
+<!-- Visual Display Wrapper -->
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-surface-container flex items-center justify-center group" id="mainPreviewBox">
+<img alt="Pratinjau Buah Uji" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A pristine ultra-clear studio photograph of a crisp, glossy organic red Honeycrisp apple resting on a laboratory inspection pedestal. Crisp diffused scientific lighting, natural micro-droplets on the peel, neutral cold gray background, sharp focus, professional high-resolution food quality control assessment." id="mainPreviewImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz7L_YNAj_Uczaj3K5GJqO1Hcuuqmr0DRFOkeMvpoyHotDqPo_Xp-aKsst3ZxLYvVimfFaQ4lcEI2eU1CbhCSMpXBD3O9LTghBmHe4_IgH91EPvnsudxgETFxeOxzIDAox7GbN0fWO6Y-Sd_Ka42nfD4eXMXcJDkPab9KFndweEU8h06i51GaRtvNmWiVh7grOvMSgN5aAJ5u6kL09UFjnkX1xtgzRiQZTZgUUiIbcsmDJ8Uy4OpVJ">
+<!-- Dynamic HUD Overlay Coordinates -->
+<div class="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="bg-primary/80 backdrop-blur-md text-on-primary font-mono font-label-sm text-label-sm px-2 py-0.5 rounded shadow" id="hudRoi">ROI: 1024x1024</span>
+<span class="bg-secondary/90 backdrop-blur-md text-on-secondary font-mono font-label-sm text-label-sm px-2 py-0.5 rounded flex items-center gap-1 shadow" id="hudClarity"><span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>98.8% Clarity</span>
+</div>
+<!-- Crosshair Center Reticle -->
+<div class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-75 transition-opacity">
+<svg class="text-white drop-shadow" fill="none" height="64" viewBox="0 0 64 64" width="64">
+<path d="M32 8V24M32 40V56M8 32H24M40 32H56" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+<circle cx="32" cy="32" r="14" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1.5"></circle>
+</svg>
+</div>
+<div class="flex justify-between items-end">
+<span class="bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded truncate max-w-[170px]" id="fileMetaLabel">Algoritma Kalibrasi 2026</span>
+<span class="bg-surface-container-lowest/90 backdrop-blur-md text-on-surface-variant font-mono font-label-sm text-label-sm px-2 py-0.5 rounded" id="fileSizeLabel">2.4 MB</span>
+</div>
+</div>
+</div>
+<!-- Micro Telemetry Specs List -->
+<div class="mt-space-md grid grid-cols-2 gap-space-xs bg-surface-container-low p-space-sm rounded-lg text-on-surface-variant font-label-sm text-label-sm border border-primary-container/5">
+<div class="flex flex-col">
+<span class="text-outline">Spektrum RGB</span>
+<span class="font-headline-sm text-label-md text-primary-container" id="teleRgb">Terverifikasi</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline">Suhu Warna</span>
+<span class="font-headline-sm text-label-md text-primary-container" id="teleTemp">5187 K</span>
+</div>
+<div class="flex flex-col mt-1">
+<span class="text-outline">Noise Sensor</span>
+<span class="font-headline-sm text-label-md text-primary-container" id="teleNoise">&lt; 0.12 SNR</span>
+</div>
+<div class="flex flex-col mt-1">
+<span class="text-outline">Segmentasi Bio</span>
+<span class="font-headline-sm text-label-md text-secondary" id="teleBio">Optimal</span>
+</div>
+</div>
+<!-- Execution Primary Action -->
+<button class="w-full mt-space-lg bg-primary-container hover:bg-primary text-on-primary py-3.5 px-6 rounded-lg font-label-lg text-label-lg shadow-md hover:shadow-lg transition-all transform active:scale-[0.98] flex items-center justify-center gap-space-sm group cursor-pointer" id="btnExecuteDetection" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:rotate-12">biotech</span>
+<span id="btnExecuteText" class="">Deteksi Kesegaran</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<!-- System Compliance Tagline -->
+<div class="mt-space-sm text-center">
+<span class="font-body-sm text-body-sm text-outline">Pemrosesan instan via model neural edge AI lokal</span>
+</div>
+</div>
+<!-- Camera Diagnostic Warning Card -->
+<div class="bg-tertiary-fixed/30 rounded-xl p-space-md flex items-start gap-space-sm border border-tertiary-fixed">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0 mt-0.5">info</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-tertiary-container font-semibold">Privasi Data Citra Terjamin</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-fixed-variant">
+              Pemindaian dilakukan tanpa menyimpan salinan foto pribadi ke server publik. Protokol keamanan mematuhi ISO 22000.
+            </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main>
+<!-- Live Camera Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 hidden" id="cameraModal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-primary-container/20 flex flex-col animate-in fade-in zoom-in-95 duration-200">
+<div class="px-5 py-4 bg-primary-container text-on-primary flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">photo_camera</span>
+<h3 class="font-headline-sm text-[16px] font-bold">Kamera Langsung - Sensor Optik</h3>
+</div>
+<button class="text-on-primary/70 hover:text-on-primary p-1 rounded-full transition-colors" id="btnCloseCamera" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<div class="p-5 flex flex-col items-center">
+<div class="relative w-full aspect-square bg-black rounded-xl overflow-hidden flex items-center justify-center">
+<video autoplay="" class="w-full h-full object-cover" id="webcamVideo" playsinline=""></video>
+<!-- Simulation Fallback Container if Camera Denied/Unsupported -->
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-surface-container-high/90 p-4 text-center hidden" id="cameraFallback">
+<span class="material-symbols-outlined text-primary-container text-[48px] mb-2">videocam_off</span>
+<p class="font-label-md text-on-surface font-semibold mb-1">Akses Kamera Tidak Tersedia</p>
+<p class="font-body-sm text-on-surface-variant max-w-xs mb-3">Sistem beralih ke kalibrasi simulasi sensor optik otomatis.</p>
+<button class="px-4 py-1.5 bg-primary-container text-on-primary rounded-lg text-xs font-semibold" id="btnSimulateShot" type="button">Ambil Foto Simulasi</button>
+</div>
+<!-- Crosshair overlay on camera -->
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-50">
+<div class="w-48 h-48 border-2 border-secondary/70 border-dashed rounded-2xl flex items-center justify-center">
+<span class="text-white/60 font-mono text-[11px] bg-black/40 px-2 py-0.5 rounded">Fokus Bidang Pangan</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between w-full mt-4 gap-3">
+<button class="px-4 py-2 border border-outline-variant hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md transition" id="btnCancelCamera" type="button">
+          Batal
+        </button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-container hover:text-on-secondary-container text-on-secondary py-2.5 px-4 rounded-lg font-label-md text-label-md font-semibold transition shadow active:scale-95" id="btnCapturePhoto" type="button">
+<span class="material-symbols-outlined text-[20px]">lens</span>
+          Ambil Foto (Capture)
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Toast Notification Container -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none" id="toastContainer"></div>
+<!-- Hidden Canvas for Video Snapshot & Canvas Preset Generators -->
+<canvas class="hidden" id="snapshotCanvas"></canvas>
+<footer class="w-full bg-surface-container-low py-4 mt-auto border-t border-surface-container-high"><div class="w-full px-margin md:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><span class="">© 2026 FreshDetect V3.0. Automated Bio-Freshness Analytics.</span><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span>Sistem Terkalibrasi</span><span class="text-outline-variant">•</span><span class="">Protokol Mutu ISO 22000</span></div></div></footer>
+<!-- 100% Fully Functioning Vanilla JavaScript -->
+<script>
+(function() {
+  // Application State
+  let samplesBatch = [];
+  let activeSampleId = null;
+  let batchSequence = 1;
+  let mediaStream = null;
+
+  // DOM Elements
+  const fileInput = document.getElementById('fileInput');
+  const dropZoneContainer = document.getElementById('dropZoneContainer');
+  const dropZoneInteractive = document.getElementById('dropZoneInteractive');
+  const browseLink = document.getElementById('browseLink');
+  const btnAddNewSample = document.getElementById('btnAddNewSample');
+  const btnSamplePreset = document.getElementById('btnSamplePreset');
+  const btnLiveCamera = document.getElementById('btnLiveCamera');
+  const btnClearBatch = document.getElementById('btnClearBatch');
+  const batchGrid = document.getElementById('batchGrid');
+  const batchCounterBadge = document.getElementById('batchCounterBadge');
+  const sampleNameInput = document.getElementById('sampleName');
+  const sampleCategorySelect = document.getElementById('sampleCategory');
+  const sampleBatchIdInput = document.getElementById('sampleBatchId');
+  const btnSaveSample = document.getElementById('btnSaveSample');
+  const btnExecuteDetection = document.getElementById('btnExecuteDetection');
+  const btnExecuteText = document.getElementById('btnExecuteText');
+  const btnSwitchSample = document.getElementById('btnSwitchSample');
+
+  // Preview elements
+  const mainPreviewImage = document.getElementById('mainPreviewImage');
+  const fileMetaLabel = document.getElementById('fileMetaLabel');
+  const fileSizeLabel = document.getElementById('fileSizeLabel');
+  const badgeSampleName = document.getElementById('badgeSampleName');
+  const previewStatusBadge = document.getElementById('previewStatusBadge');
+  const hudRoi = document.getElementById('hudRoi');
+  const hudClarity = document.getElementById('hudClarity');
+  const teleRgb = document.getElementById('teleRgb');
+  const teleTemp = document.getElementById('teleTemp');
+  const teleNoise = document.getElementById('teleNoise');
+  const teleBio = document.getElementById('teleBio');
+
+  // Camera elements
+  const cameraModal = document.getElementById('cameraModal');
+  const webcamVideo = document.getElementById('webcamVideo');
+  const cameraFallback = document.getElementById('cameraFallback');
+  const btnCloseCamera = document.getElementById('btnCloseCamera');
+  const btnCancelCamera = document.getElementById('btnCancelCamera');
+  const btnCapturePhoto = document.getElementById('btnCapturePhoto');
+  const btnSimulateShot = document.getElementById('btnSimulateShot');
+  const snapshotCanvas = document.getElementById('snapshotCanvas');
+
+  // Realistic Canvas Sample Generator
+  function generateProceduralFoodDataUrl(type, name) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 600;
+    canvas.height = 600;
+    const ctx = canvas.getContext('2d');
+
+    // Background gradient
+    const bgGrad = ctx.createRadialGradient(300, 300, 50, 300, 300, 350);
+    bgGrad.addColorStop(0, '#f0f4f8');
+    bgGrad.addColorStop(1, '#d5dde5');
+    ctx.fillStyle = bgGrad;
+    ctx.fillRect(0, 0, 600, 600);
+
+    // Subtle inspection pedestal
+    ctx.save();
+    ctx.beginPath();
+    ctx.ellipse(300, 480, 220, 60, 0, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(10, 35, 66, 0.08)';
+    ctx.fill();
+    ctx.restore();
+
+    // Draw stylized food subject based on type
+    if (type === 'apel') {
+      const g = ctx.createRadialGradient(260, 260, 30, 300, 320, 180);
+      g.addColorStop(0, '#ff4d4d');
+      g.addColorStop(0.5, '#cc1122');
+      g.addColorStop(0.9, '#800010');
+      g.addColorStop(1, '#4a0008');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(300, 330, 140, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Stem & Leaf
+      ctx.strokeStyle = '#4a2c11';
+      ctx.lineWidth = 8;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(300, 200);
+      ctx.quadraticCurveTo(310, 150, 330, 130);
+      ctx.stroke();
+
+      ctx.fillStyle = '#4ade80';
+      ctx.beginPath();
+      ctx.ellipse(340, 145, 25, 12, Math.PI / 4, 0, Math.PI * 2);
+      ctx.fill();
+    } else if (type === 'jeruk') {
+      const g = ctx.createRadialGradient(270, 270, 20, 300, 320, 160);
+      g.addColorStop(0, '#ffb347');
+      g.addColorStop(0.7, '#ff7b00');
+      g.addColorStop(1, '#c25100');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(300, 330, 135, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Small citrus pore dots
+      ctx.fillStyle = 'rgba(255,255,255,0.25)';
+      for(let i = 0; i < 40; i++) {
+        ctx.beginPath();
+        const rx = 200 + Math.random() * 200;
+        const ry = 230 + Math.random() * 200;
+        ctx.arc(rx, ry, 1.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    } else if (type === 'mangga') {
+      const g = ctx.createLinearGradient(200, 200, 420, 440);
+      g.addColorStop(0, '#ffd166');
+      g.addColorStop(0.4, '#a7c957');
+      g.addColorStop(1, '#386641');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.ellipse(300, 320, 110, 150, Math.PI / 6, 0, Math.PI * 2);
+      ctx.fill();
+    } else if (type === 'ayam') {
+      const g = ctx.createLinearGradient(220, 250, 380, 400);
+      g.addColorStop(0, '#ffe5ec');
+      g.addColorStop(0.6, '#fbb1bd');
+      g.addColorStop(1, '#e07a8f');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.ellipse(300, 340, 140, 95, -Math.PI / 12, 0, Math.PI * 2);
+      ctx.fill();
+    } else if (type === 'melon') {
+      const g = ctx.createRadialGradient(280, 290, 40, 300, 330, 160);
+      g.addColorStop(0, '#cbf3f0');
+      g.addColorStop(0.5, '#70e000');
+      g.addColorStop(1, '#38b000');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(300, 330, 140, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Melon netting
+      ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+      ctx.lineWidth = 1.5;
+      for (let i = 0; i < 8; i++) {
+        ctx.beginPath();
+        ctx.arc(300, 330, 135, i * 0.4, i * 0.4 + 1.2);
+        ctx.stroke();
+      }
+    }
+
+    // Scientific watermark stamp
+    ctx.fillStyle = 'rgba(10, 35, 66, 0.7)';
+    ctx.font = 'bold 15px Plus Jakarta Sans, Inter, sans-serif';
+    ctx.fillText('FRESHDETECT V3 • BIO-SAMPLE CALIBRATED', 30, 45);
+    ctx.font = '13px Inter, sans-serif';
+    ctx.fillStyle = 'rgba(10, 35, 66, 0.5)';
+    ctx.fillText(name.toUpperCase() + ' - OPTICAL PASS', 30, 65);
+
+    return canvas.toDataURL('image/jpeg', 0.9);
+  }
+
+  // Toast Notification System
+  function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    const isSuccess = type === 'success';
+    toast.className = `flex items-center gap-2 px-4 py-3 rounded-xl shadow-xl pointer-events-auto transition-all duration-300 transform translate-y-2 opacity-0 text-body-sm font-label-md ${
+      isSuccess ? 'bg-primary-container text-on-primary border border-secondary/40' : 'bg-error text-on-error'
+    }`;
+    toast.innerHTML = `
+      <span class="material-symbols-outlined text-[18px] ${isSuccess ? 'text-secondary-container' : 'text-on-error'}">
+        ${isSuccess ? 'check_circle' : 'error'}
+      </span>
+      <span>${message}</span>
+    `;
+    const toastContainer = document.getElementById('toastContainer');
+    toastContainer.appendChild(toast);
+    requestAnimationFrame(() => {
+      toast.classList.remove('translate-y-2', 'opacity-0');
+    });
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-2');
+      setTimeout(() => toast.remove(), 300);
+    }, 3200);
+  }
+
+  // Add sample to state
+  function addSample(sampleData, activate = true) {
+    const id = 'SMP-' + Date.now().toString(36) + '-' + Math.floor(Math.random() * 1000);
+    const newSample = {
+      id: id,
+      name: sampleData.name || 'Sampel Pangan Baru',
+      category: sampleData.category || 'Buah (Fresh Fruit)',
+      batchId: sampleData.batchId || ('#SMP-2025-' + String(batchSequence++).padStart(2, '0')),
+      fileName: sampleData.fileName || 'sampel_citra.jpg',
+      fileSize: sampleData.fileSize || '2.1 MB',
+      dataUrl: sampleData.dataUrl,
+      clarity: sampleData.clarity || (97 + Math.random() * 2.8).toFixed(1) + '%',
+      roi: sampleData.roi || '1024x1024',
+      rgbStatus: 'Terverifikasi',
+      colorTemp: (5000 + Math.floor(Math.random() * 500)) + ' K',
+      noise: '< 0.' + (10 + Math.floor(Math.random() * 8)) + ' SNR',
+      bioSeg: 'Optimal',
+      timestamp: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
+    };
+
+    samplesBatch.push(newSample);
+    renderBatchGrid();
+
+    if (activate || samplesBatch.length === 1) {
+      setActiveSample(id);
+    }
+    return newSample;
+  }
+
+  // Set active sample and sync telemetry + form
+  function setActiveSample(id) {
+    const found = samplesBatch.find(s => s.id === id);
+    if (!found) return;
+
+    activeSampleId = id;
+    
+    // Update Main Preview Display
+    mainPreviewImage.src = found.dataUrl;
+    fileMetaLabel.textContent = found.fileName;
+    fileSizeLabel.textContent = found.fileSize;
+    badgeSampleName.textContent = `${found.name} (${found.batchId})`;
+    
+    hudRoi.textContent = `ROI: ${found.roi}`;
+    hudClarity.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>${found.clarity} Clarity`;
+    
+    teleRgb.textContent = found.rgbStatus;
+    teleTemp.textContent = found.colorTemp;
+    teleNoise.textContent = found.noise;
+    teleBio.textContent = found.bioSeg;
+
+    previewStatusBadge.textContent = 'Siap Deteksi';
+    previewStatusBadge.className = 'bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2.5 py-0.5 rounded-full';
+
+    // Populate Registration Form
+    sampleNameInput.value = found.name;
+    sampleCategorySelect.value = found.category;
+    sampleBatchIdInput.value = found.batchId;
+
+    renderBatchGrid();
+  }
+
+  // Remove sample
+  function removeSample(id, event) {
+    if (event) event.stopPropagation();
+    const idx = samplesBatch.findIndex(s => s.id === id);
+    if (idx === -1) return;
+
+    const removedName = samplesBatch[idx].name;
+    samplesBatch.splice(idx, 1);
+
+    if (activeSampleId === id) {
+      if (samplesBatch.length > 0) {
+        setActiveSample(samplesBatch[0].id);
+      } else {
+        // Reset to initial placeholder if empty
+        activeSampleId = null;
+        badgeSampleName.textContent = 'Belum Ada Sampel Terpilih';
+        fileMetaLabel.textContent = 'tidak_ada_berkas.jpg';
+        fileSizeLabel.textContent = '0 MB';
+        previewStatusBadge.textContent = 'Antrean Kosong';
+        previewStatusBadge.className = 'bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full';
+      }
+    }
+    renderBatchGrid();
+    showToast(`Sampel "${removedName}" telah dihapus.`, 'success');
+  }
+
+  // Render batch card grid
+  function renderBatchGrid() {
+    batchCounterBadge.textContent = `${samplesBatch.length} Sampel Terdaftar`;
+    btnClearBatch.classList.toggle('hidden', samplesBatch.length === 0);
+
+    if (samplesBatch.length === 0) {
+      batchGrid.innerHTML = `
+        <div class="col-span-full py-8 text-center border-2 border-dashed border-primary-container/10 rounded-xl bg-surface/30">
+          <span class="material-symbols-outlined text-[36px] text-outline-variant mb-1">inventory_2</span>
+          <p class="font-label-md text-on-surface-variant">Belum ada sampel di antrean batch.</p>
+          <p class="font-body-sm text-outline">Unggah foto atau pilih salah satu tombol preset uji cepat di atas.</p>
+        </div>
+      `;
+      return;
+    }
+
+    batchGrid.innerHTML = samplesBatch.map(sample => {
+      const isActive = sample.id === activeSampleId;
+      return `
+        <div class="relative bg-surface rounded-xl p-3 border transition-all duration-200 flex flex-col justify-between ${
+          isActive 
+            ? 'border-secondary shadow-md bg-secondary-container/5 ring-1 ring-secondary' 
+            : 'border-primary-container/10 hover:border-primary-container/30 bg-surface-container-lowest shadow-sm'
+        }">
+          <div class="flex items-start gap-3">
+            <div class="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-surface-container-high border border-primary-container/10">
+              <img src="${sample.dataUrl}" alt="${sample.name}" class="w-full h-full object-cover">
+              ${isActive ? '<span class="absolute top-1 left-1 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-white"></span>' : ''}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-1">
+                <span class="font-label-sm text-[10px] uppercase font-bold text-outline-variant truncate">${sample.batchId}</span>
+                <span class="text-[10px] px-1.5 py-0.5 rounded font-medium ${
+                  isActive ? 'bg-secondary-container text-on-secondary-container font-semibold' : 'bg-surface-container-high text-on-surface-variant'
+                }">
+                  ${isActive ? 'Aktif' : 'Antrean'}
+                </span>
+              </div>
+              <h4 class="font-headline-sm text-label-md font-semibold text-primary-container truncate mt-0.5" title="${sample.name}">${sample.name}</h4>
+              <p class="font-body-sm text-[11px] text-on-surface-variant truncate">${sample.fileName} • ${sample.fileSize}</p>
+            </div>
+          </div>
+          
+          <div class="mt-3 pt-2 border-t border-surface-container-high flex items-center justify-between gap-2">
+            <button type="button" onclick="window.freshSelectSample('${sample.id}')" class="text-xs font-label-sm px-2.5 py-1 rounded transition-colors flex items-center gap-1 ${
+              isActive 
+                ? 'bg-secondary text-on-secondary font-semibold' 
+                : 'bg-primary-container/10 text-primary-container hover:bg-primary-container hover:text-on-primary'
+            }">
+              <span class="material-symbols-outlined text-[14px]">${isActive ? 'check' : 'visibility'}</span>
+              ${isActive ? 'Sampel Terpilih' : 'Pilih Sampel'}
+            </button>
+            <button type="button" onclick="window.freshDeleteSample('${sample.id}', event)" class="p-1 rounded text-outline hover:text-error hover:bg-error-container/40 transition-colors" title="Hapus Sampel">
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // Global hooks for inline card buttons
+  window.freshSelectSample = function(id) {
+    setActiveSample(id);
+    showToast('Pratinjau sampel aktif diperbarui.');
+  };
+
+  window.freshDeleteSample = function(id, e) {
+    removeSample(id, e);
+  };
+
+  // Process chosen or dropped files
+  function handleFiles(fileList) {
+    if (!fileList || fileList.length === 0) return;
+
+    let loadedCount = 0;
+    Array.from(fileList).forEach(file => {
+      if (!file.type.match('image.*')) {
+        showToast(`Berkas "${file.name}" bukan format gambar valid.`, 'error');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(1) + ' MB';
+        // Auto derive friendly sample name
+        let cleanName = file.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, ' ');
+        cleanName = cleanName.charAt(0).toUpperCase() + cleanName.slice(1);
+        
+        addSample({
+          name: cleanName || 'Sampel Citra Lab',
+          category: 'Buah (Fresh Fruit)',
+          fileName: file.name,
+          fileSize: sizeMb,
+          dataUrl: e.target.result
+        }, loadedCount === 0);
+        
+        loadedCount++;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    showToast(`Memproses ${fileList.length} berkas citra ke antrean...`);
+  }
+
+  // Preset dictionary with custom metadata
+  const PRESET_MAP = {
+    apel: {
+      type: 'apel',
+      name: 'Apel Merah Fuji Grade A',
+      category: 'Buah (Fresh Fruit)',
+      fileName: 'foto_apel_fuji_segar.jpg',
+      fileSize: '2.4 MB'
+    },
+    jeruk: {
+      type: 'jeruk',
+      name: 'Jeruk Pontianak Segar',
+      category: 'Buah (Fresh Fruit)',
+      fileName: 'jeruk_pontianak_medan.jpg',
+      fileSize: '1.9 MB'
+    },
+    mangga: {
+      type: 'mangga',
+      name: 'Mangga Harum Manis Matang',
+      category: 'Buah (Fresh Fruit)',
+      fileName: 'mangga_harum_manis_02.jpg',
+      fileSize: '2.8 MB'
+    },
+    ayam: {
+      type: 'ayam',
+      name: 'Daging Ayam Fillet Segar',
+      category: 'Daging (Fresh Poultry/Meat)',
+      fileName: 'sampel_daging_fillet.jpg',
+      fileSize: '3.1 MB'
+    },
+    melon: {
+      type: 'melon',
+      name: 'Melon Sky Rocket Premium',
+      category: 'Buah (Fresh Fruit)',
+      fileName: 'melon_sky_rocket.jpg',
+      fileSize: '2.6 MB'
+    }
+  };
+
+  function loadPreset(presetKey) {
+    const p = PRESET_MAP[presetKey];
+    if (!p) return;
+    const dataUrl = generateProceduralFoodDataUrl(p.type, p.name);
+    addSample({
+      name: p.name,
+      category: p.category,
+      fileName: p.fileName,
+      fileSize: p.fileSize,
+      dataUrl: dataUrl
+    }, true);
+    showToast(`Sampel preset "${p.name}" ditambahkan!`);
+  }
+
+  // WebCam Modal Management
+  async function openCameraModal() {
+    cameraModal.classList.remove('hidden');
+    cameraFallback.classList.add('hidden');
+    webcamVideo.classList.remove('hidden');
+
+    try {
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        mediaStream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
+        });
+        webcamVideo.srcObject = mediaStream;
+        await webcamVideo.play();
+      } else {
+        throw new Error('getUserMedia not supported');
+      }
+    } catch (err) {
+      console.warn('Camera stream error, using interactive simulation fallback:', err);
+      cameraFallback.classList.remove('hidden');
+    }
+  }
+
+  function closeCameraModal() {
+    if (mediaStream) {
+      mediaStream.getTracks().forEach(track => track.stop());
+      mediaStream = null;
+    }
+    webcamVideo.srcObject = null;
+    cameraModal.classList.add('hidden');
+  }
+
+  function captureCameraFrame() {
+    const timestamp = Date.now();
+    const fileName = `kamera_sampel_${timestamp}.jpg`;
+    
+    // If stream is active
+    if (webcamVideo.videoWidth > 0 && !cameraFallback.classList.contains('hidden') === false) {
+      snapshotCanvas.width = webcamVideo.videoWidth;
+      snapshotCanvas.height = webcamVideo.videoHeight;
+      const ctx = snapshotCanvas.getContext('2d');
+      ctx.drawImage(webcamVideo, 0, 0, snapshotCanvas.width, snapshotCanvas.height);
+      const dataUrl = snapshotCanvas.toDataURL('image/jpeg', 0.92);
+      
+      addSample({
+        name: 'Tangkapan Kamera Langsung',
+        category: 'Buah (Fresh Fruit)',
+        fileName: fileName,
+        fileSize: '2.3 MB',
+        dataUrl: dataUrl
+      }, true);
+      
+      closeCameraModal();
+      showToast('Foto berhasil ditangkap dari sensor kamera!');
+    } else {
+      // Fallback capture
+      triggerSimulatedCapture();
+    }
+  }
+
+  function triggerSimulatedCapture() {
+    const timestamp = Date.now();
+    const dataUrl = generateProceduralFoodDataUrl('apel', 'Tangkapan Kamera Langsung');
+    addSample({
+      name: 'Tangkapan Kamera Sensor',
+      category: 'Buah (Fresh Fruit)',
+      fileName: `kamera_simulasi_${timestamp}.jpg`,
+      fileSize: '2.2 MB',
+      dataUrl: dataUrl
+    }, true);
+    closeCameraModal();
+    showToast('Foto sensor kamera berhasil disimulasikan & didaftarkan!');
+  }
+
+  // Setup Event Listeners
+  function initEvents() {
+    // Hidden file input triggers
+    if (browseLink) {
+      browseLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        fileInput.click();
+      });
+    }
+
+    if (btnAddNewSample) {
+      btnAddNewSample.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        fileInput.click();
+      });
+    }
+
+    if (dropZoneInteractive) {
+      dropZoneInteractive.addEventListener('click', () => {
+        fileInput.click();
+      });
+    }
+
+    if (fileInput) {
+      fileInput.addEventListener('change', (e) => {
+        handleFiles(e.target.files);
+        fileInput.value = ''; // reset so same file can be re-added
+      });
+    }
+
+    // Drag and Drop
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZoneContainer.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropZoneContainer.classList.add('border-secondary', 'bg-secondary-container/10');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZoneContainer.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropZoneContainer.classList.remove('border-secondary', 'bg-secondary-container/10');
+      });
+    });
+
+    dropZoneContainer.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      if (dt && dt.files && dt.files.length > 0) {
+        handleFiles(dt.files);
+      }
+    });
+
+    // Preset Chip Buttons
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const pKey = btn.dataset.preset;
+        loadPreset(pKey);
+      });
+    });
+
+    // Primary sample preset single button
+    if (btnSamplePreset) {
+      btnSamplePreset.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        loadPreset('apel');
+      });
+    }
+
+    // Camera buttons
+    if (btnLiveCamera) {
+      btnLiveCamera.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openCameraModal();
+      });
+    }
+
+    if (btnCloseCamera) btnCloseCamera.addEventListener('click', closeCameraModal);
+    if (btnCancelCamera) btnCancelCamera.addEventListener('click', closeCameraModal);
+    if (btnCapturePhoto) btnCapturePhoto.addEventListener('click', captureCameraFrame);
+    if (btnSimulateShot) btnSimulateShot.addEventListener('click', triggerSimulatedCapture);
+
+    // Clear batch
+    if (btnClearBatch) {
+      btnClearBatch.addEventListener('click', () => {
+        if (confirm('Kosongkan semua antrean sampel batch?')) {
+          samplesBatch = [];
+          activeSampleId = null;
+          renderBatchGrid();
+          badgeSampleName.textContent = 'Belum Ada Sampel Terpilih';
+          fileMetaLabel.textContent = 'antrean_kosong.jpg';
+          fileSizeLabel.textContent = '0 MB';
+          previewStatusBadge.textContent = 'Antrean Kosong';
+          previewStatusBadge.className = 'bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full';
+          showToast('Seluruh sampel antrean telah dibersihkan.');
+        }
+      });
+    }
+
+    // Switch focus to batch section
+    if (btnSwitchSample) {
+      btnSwitchSample.addEventListener('click', () => {
+        const batchSec = document.getElementById('batchSection');
+        if (batchSec) {
+          batchSec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          batchSec.classList.add('ring-2', 'ring-secondary');
+          setTimeout(() => batchSec.classList.remove('ring-2', 'ring-secondary'), 1200);
+        }
+      });
+    }
+
+    // Save Form Metadata
+    if (btnSaveSample) {
+      btnSaveSample.addEventListener('click', (e) => {
+        e.preventDefault();
+        const sName = sampleNameInput.value.trim() || 'Sampel Pangan Bio';
+        const sCat = sampleCategorySelect.value;
+        const sBatch = sampleBatchIdInput.value.trim() || '#SMP-2025-01';
+
+        if (activeSampleId) {
+          const current = samplesBatch.find(s => s.id === activeSampleId);
+          if (current) {
+            current.name = sName;
+            current.category = sCat;
+            current.batchId = sBatch;
+            renderBatchGrid();
+            badgeSampleName.textContent = `${sName} (${sBatch})`;
+            showToast(`Metadata sampel "${sName}" berhasil disimpan!`);
+            return;
+          }
+        }
+
+        // If no sample active, create a new registered item with procedural image
+        const dataUrl = generateProceduralFoodDataUrl('apel', sName);
+        addSample({
+          name: sName,
+          category: sCat,
+          batchId: sBatch,
+          fileName: sName.toLowerCase().replace(/\s+/g, '_') + '.jpg',
+          fileSize: '2.5 MB',
+          dataUrl: dataUrl
+        }, true);
+        showToast(`Sampel baru "${sName}" berhasil diregistrasi ke antrean!`);
+      });
+    }
+
+    // Execute Detection & Redirect to hasil.html
+    if (btnExecuteDetection) {
+      btnExecuteDetection.addEventListener('click', () => {
+        if (!activeSampleId || samplesBatch.length === 0) {
+          showToast('Harap unggah atau pilih sampel terlebih dahulu!', 'error');
+          return;
+        }
+
+        const activeSample = samplesBatch.find(s => s.id === activeSampleId);
+        if (!activeSample) return;
+
+        // UI state: loading spinner
+        btnExecuteDetection.disabled = true;
+        btnExecuteDetection.classList.add('opacity-90', 'cursor-wait');
+        btnExecuteText.textContent = 'Menganalisis Biometrik...';
+
+        // Prepare simulation data for hasil.html
+        const analysisPayload = {
+          sampleId: activeSample.id,
+          name: activeSample.name,
+          category: activeSample.category,
+          batchId: activeSample.batchId,
+          fileName: activeSample.fileName,
+          fileSize: activeSample.fileSize,
+          dataUrl: activeSample.dataUrl,
+          clarity: activeSample.clarity,
+          roi: activeSample.roi,
+          rgbStatus: activeSample.rgbStatus,
+          colorTemp: activeSample.colorTemp,
+          noise: activeSample.noise,
+          bioSeg: activeSample.bioSeg,
+          timestamp: new Date().toISOString(),
+          // Calculated Metrics
+          freshnessScore: Math.floor(88 + Math.random() * 11), // 88% - 98%
+          degradationRate: '2.3% per 24 jam',
+          estimatedShelfLife: '6 - 8 Hari',
+          bacterialRisk: 'Rendah (Steril)',
+          conclusion: 'Kualitas Prima (Grade A) - Layak Konsumsi & Distribusi'
+        };
+
+        try {
+          localStorage.setItem('freshdetect_active_sample', JSON.stringify(analysisPayload));
+          
+          // Also append to history
+          let history = [];
+          const existing = localStorage.getItem('freshdetect_history');
+          if (existing) {
+            try { history = JSON.parse(existing); } catch(e) {}
+          }
+          history.unshift(analysisPayload);
+          // Keep max 20 entries
+          if (history.length > 20) history = history.slice(0, 20);
+          localStorage.setItem('freshdetect_history', JSON.stringify(history));
+        } catch (e) {
+          console.warn('LocalStorage error:', e);
+        }
+
+        // Brief realistic model inference animation
+        setTimeout(() => {
+          window.location.href = 'hasil.html';
+        }, 750);
+      });
+    }
+  }
+
+  // Initialize Default State
+  function initDefaults() {
+    // Pre-populate with initial Honeycrisp Apple sample shown in source design
+    const defaultDataUrl = mainPreviewImage.getAttribute('src');
+    addSample({
+      name: 'Apel Fuji Red Delicious',
+      category: 'Buah (Fresh Fruit)',
+      batchId: '#SMP-2025-01',
+      fileName: 'foto_apel_segar.jpg',
+      fileSize: '2.4 MB',
+      dataUrl: defaultDataUrl,
+      clarity: '98.8%',
+      roi: '1024x1024'
+    }, true);
+  }
+
+  // Run on page ready
+  initEvents();
+  initDefaults();
+})();
+</script>
+
+
+</body></html>
